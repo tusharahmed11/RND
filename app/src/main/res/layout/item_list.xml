@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+
+
+    <com.example.demoprojectforrnd.customviews.ribbon.RibbonLayout
+        android:id="@+id/ribbonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ribbonLayout_bottom_align="right"
+        app:ribbonLayout_header_align="left">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/firstImgLiveFeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/defaultplaceholder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Live counter View -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/FirstMainGridRowLinearCount"
+                android:layout_width="55dp"
+                android:layout_height="15dp"
+                app:shimmer_base_alpha="1.0"
+                app:shimmer_highlight_alpha="0.3"
+                app:shimmer_auto_start="true"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/FirstLinearLayout"
+                app:layout_constraintStart_toStartOf="@+id/firstImgLiveFeed"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="55dp"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/ic_round_btn"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="2dp"
+                        android:shadowColor="#b83af3"
+                        android:text="LIVE"
+                        android:elevation="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="7sp" />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/FirstMainGridRowImageViewFire"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/equalizer_anim"
+                        android:tint="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/leftLiveTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginStart="7dp"
+                        android:src="@drawable/call"
+                        android:padding="2dp"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/FirstMainGridRowTextViewTotalViewCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:shadowColor="#b83af3"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <com.example.demoprojectforrnd.customviews.ribbon.ShimmerRibbonView
+                android:id="@+id/rightTag"
+                android:layout_width="55dp"
+                android:layout_height="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:background="@android:color/transparent"
+                app:shimmer_base_alpha="1"
+                app:shimmer_highlight_alpha="0.3"
+                app:shimmer_ribbon_drawable="@drawable/ic_super_bee"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.example.demoprojectforrnd.customviews.ribbon.ShimmerRibbonView>
+
+            <!-- bottom Name VIew-->
+            <LinearLayout
+                android:id="@+id/FirstLinearLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FirstMainGridRowLinearCount">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/black_alpha_70"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/FirstMainGridRowTextViewName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/FirstMainGridRowTextViewLanguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="start"
+                        android:layoutDirection="ltr"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.example.demoprojectforrnd.customviews.ribbon.RibbonLayout>
+</androidx.cardview.widget.CardView>
+
+
+
+
